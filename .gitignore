@@ -11,6 +11,6 @@
 *.toc
 *.out
 ###################
-# Zed Editor temp #
+# Zed Editor tmp  #
 ###################
 *.zedstate
