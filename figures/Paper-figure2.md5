@@ -1,0 +1,1 @@
+\begingroup \toks 0={macro:-> \begin {axis}[grid=major, view={20}{45}, z buffer=sort, xlabel = {$x$}, ylabel = {$y$}, zlabel = {$f(x,y)$}, data cs=cart] \addplot 3 [surf,domain=0:20,samples=2, opacity=0.5] {365}; \end {axis} }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %

@@ -1,0 +1,16 @@
+###############
+# LaTeX Build #
+###############
+*.bst
+*.aux
+*.auxlock
+*.bbl
+*.blg
+*.log
+*.gz
+*.toc
+*.out
+###################
+# Zed Editor temp #
+###################
+*.zedstate
