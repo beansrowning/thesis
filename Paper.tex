@@ -13,6 +13,7 @@
 \usepackage{pgfplots}
 % Render Tikz and pgfplots seprately to avoid memory issues
 \usepgfplotslibrary{external}
+% Render Tikz and pgfplots to the /figures/ folder
 \tikzexternalize[prefix=./figures/]
 \pgfplotsset{width = 7cm, compat = 1.7}
 % Refrencing images in subfiles will point to the correct directory

@@ -1,9 +1,14 @@
 \documentclass[../Paper.tex]{subfiles}
 \begin{document}
   \justifying
-  To explore the susceptibility of measles-eliminated countries in Europe to
-  experience an epidemic following new case importation, I aimed to first create
-  a standard transmission model. The initial values of the compartmental model
-  could then be selected 
+  The aim first and foremost is to explore the susceptibility of measles-eliminated
+  countries in Europe to experience an epidemic following new case importation.
+  To accomplish this, I first created a stochastic transmission model of measles
+  in the country. Using population data from the United Nations and seroprevalence data from the World Health Organization,
+  I extrapolated initial population values for the compartmental model.
+
+  Beyond this, I created a modelling framework in the R programming language
+  in order to handle the insertion of infected individuals into the model and
+  determine the impact after running several iterations. As the
   \clearpage
 \end{document}
