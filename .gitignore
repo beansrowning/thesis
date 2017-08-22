@@ -10,7 +10,10 @@
 *.gz
 *.toc
 *.out
+*.fdb_latexmk
+*.fls
+*.xdv
 ###################
-# Zed Editor tmp  #
+# Zed Editor TMP  #
 ###################
 *.zedstate
