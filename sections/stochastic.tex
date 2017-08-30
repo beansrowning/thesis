@@ -19,8 +19,7 @@ of change is low. This serves a dual purpose:
                    to define transition advancement}
 \end{enumerate}
 
-In making the model stochastic, we can now represent the standard compartmental model
-as a markov chain process.
+The Compartmental SEIR model can also be expressed as a markov-chain process like so:
 
 \begin{figure}[htbp]
   \centering
@@ -37,6 +36,7 @@ as a markov chain process.
       % In-flows and out-flows
       \coordinate[above=of S1] (in1);
       \coordinate[above=of R1] (in2);
+      \coordinate[above=of I1] (in3);
       \coordinate[below=of S2] (out1);
       \coordinate[below=of E2] (out2);
       \coordinate[below=of I2] (out3);
@@ -63,6 +63,9 @@ as a markov chain process.
           (E2)   edge[bend right] node {}  (out2)
           (I2)   edge[bend right] node {}  (out3)
           (R2)   edge[bend right] node {}  (out4)
+          % Case Introduction
+          (in3)  edge[bend right] node {}  (I1)
+          (out3) edge[bend left]  node {}  (I2)
           % Same state
           (S1) edge[loop above] node {} (S1)
           (S2) edge[loop above] node {} (S2)
