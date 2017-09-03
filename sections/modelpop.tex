@@ -9,17 +9,15 @@ proportion of seronegative individuals and Sweden having the lowest.
 The table below highlights this variation along with nationally-reported MCV1 and MCV2 rates.
 \begin{table}[htbp]
 \centering
-\caption{My caption}
 \label{my-label}
 \begin{tabular}{@{}lllllllllllllllll@{}}
-\toprule
-\multicolumn{2}{l}{\multirow{2}{*}{}} & \multicolumn{7}{c}{MCV1} &  & \multicolumn{7}{c}{MCV2} \\ \cmidrule(l){3-17}
-\multicolumn{2}{l}{} & 2016 & 2015 & 2014 & 2013 & 2012 & 2011 & 2010 &  & 2016 & 2015 & 2014 & 2013 & 2012 & 2011 & 2010 \\ \cmidrule(r){1-2}
+\multicolumn{2}{l}{\multirow{2}{*}{}} & \multicolumn{7}{c}{MCV1} &  & \multicolumn{7}{c}{MCV2} \\ \cmidrule(lr){3-9} \cmidrule(l){11-17}
+\multicolumn{2}{l}{} & 2016 & 2015 & 2014 & 2013 & 2012 & 2011 & 2010 &  & 2016 & 2015 & 2014 & 2013 & 2012 & 2011 & 2010 \\ \cmidrule(r){1-17}
 \multicolumn{2}{l}{Sweden} & 97\% & 98\% & 97\% & 97\% & 97\% & 96\% & 97\% &  & 95\% & 95\% & 95\% & 95\% & 95\% & 95\% & 94\% \\
 \multicolumn{2}{l}{Malta} & 93\% & 89\% & 98\% & 99\% & 93\% & 84\% & 73\% &  & 86\% & 91\% & 94\% & 88\% & 91\% & 85\% & 97\% \\
 \multicolumn{2}{l}{Latvia} & 93\% & 96\% & 95\% & 96\% & 90\% & 92\% & 95\% &  & 89\% & 92\% & 89\% & 92\% & 92\% & 92\% & 93\% \\ \bottomrule
 \end{tabular}
-\caption{MCV1 and MCV2 coverage rates as reported to the WHO \cite{http://www.who.int/immunization/monitoring_surveillance/routine/reporting/en/}}
+\caption{MCV1 and MCV2 coverage rates as reported to the WHO \cite{world_health_organization_table}}
 \end{table}
 
 
@@ -38,23 +36,6 @@ therefore some liberty was taken in best estimating these population values.
 Where possible, sensitivity analyses of the parameters were conducted to
 quantify the impact on model results.
 
-To extrapolate values for in the model, seroprevalence values were direct standardized
-using the most recent population age demographics for each country. Two summary
-measures were created by summating the weighted rates for each age range
-contained in the model compartments. This is described here by the following
-equation:
-  \begin{equation}
-    P_{[i,n]} =\sum_{i}^{n}W_{i}\cdot \widehat{p_{i}}
-  \end{equation}
-  where:\\
-  $P_{[i,n]} =$ measles seroprevalence from ages $i$ to $n$, \\
-  $W_{i} =$ weight of age group $i$, calculated as the quotient of the population
-  of age group $i$ divided by the population in groups $i$ to $n$, and \\
-  $\widehat{p_{i}} =$ measles seroprevalence in group $i$
-
-The resulting seroprevalence values are then multiplied by their respective
-populations to generate the proportion susceptible and immune in the two age
-compartments.
 
 
 \clearpage

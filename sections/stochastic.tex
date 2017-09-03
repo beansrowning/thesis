@@ -64,27 +64,56 @@ Markov-chain process like so:
 \end{figure}
 This diagram serves to highlight the possible transitions when the system is simulated.
 The ODEs still describe the average propensity for each transition
-in the same way as the compartmental SEIR model in Figure \ref{fig: M1}.
+in the same way as the compartmental SEIR model in Figure \ref{fig:M1}.
 
-The method used to solve the stochastic system is an explicit $\tau $-leaping variation of the Gillespie Algorithm. In R, the package which provides this functionality is called adaptivetau. The deterministic differential equations are supplied and evaluated by adaptivetau as propensity functions.  In turn, it applies those functions to the list of state space transitions between passed as a vector.
+The method used to solve the stochastic system is an explicit $\tau $-leaping
+variation of the Gillespie Algorithm. In R, the package which provides this
+functionality is called adaptivetau. The deterministic differential equations
+are supplied and evaluated by adaptivetau as propensity functions.
+In turn, it applies those functions to the list of state space transitions
+between passed as a vector.
 
-Gillespie describes the mechanism as it pertains to chemical physics in his first publication on the topic\cite{gillespie_2001}. Let us define the propensity of any transition in the model as $a_{j}$. The goal of the algorithm is then to find the value of $\tau$ which results in the smallest appreciable increase in $a_{j}$ of a given transition.
+Gillespie describes the mechanism as it pertains to chemical physics in his
+first publication on the topic\cite{gillespie_2001}.
+Let us define the propensity of any transition in the model as $a_{j}$.
+The goal of the algorithm is then to find the value of $\tau$ which
+results in the smallest appreciable increase in $a_{j}$ of a given transition.
 
-Cao et al. extend this by providing an algorithm for efficiently selecting values of $\tau$ \cite{cao_gillespie_petzold_2007}. In more plain terms, the ``explicit $\tau$-leaping'' method depends on bounding the change in event rate of each transition at a given time by the transition rate function which produces the largest value in that same period. The calculated rates are also a product of an initial tolerance value, which Cao suggests should be set at 0.03. Evaluating all transition event rates with this method produces a set of possible values of $\tau$, the minimum of which is the optimal value.
+Cao et al. extend this by providing an algorithm for efficiently selecting
+values of $\tau$ \cite{cao_gillespie_petzold_2007}. In more plain terms, the
+``explicit $\tau$-leaping'' method depends on bounding the change in event rate
+of each transition at a given time by the transition rate function which
+produces the largest value in that same period.
+The calculated rates are also a product of an initial tolerance value,
+which Cao suggests should be set at 0.03. Evaluating all transition event rates
+with this method produces a set of possible values of $\tau$, the minimum of
+which is the optimal value.
 
-With the value of $\tau$ calculated, the probability density function (PDF) of the event rate for any state space transition $E_{j}$ in that time step is Poisson-distributed:
+With the value of $\tau$ calculated, the probability density function (PDF) of
+the event rate for any state space transition $E_{j}$ in that time step is Poisson-distributed:
 \begin{equation} \label{eq:tau_leap1}
 P\left(E_{j}\right)\sim Poisson \left( a_{j}\cdot\tau \right)
 \end{equation}
+
 As a consequence, for sufficiently high transition propensities $a_{j}$,
 or values of $\tau$, the PDF of the event rate described in Equation \ref{eq:tau_leap1}
 will follow the normal distribution :
+
 \begin{equation} \label{eq:tau_leap2}
-P\left(E_{j}\right)\sim N \left( a_{j}\cdot\tau, \sqrt{a_{j}}\cdot\tau} \right)
+P\left(E_{j}\right)\sim N \left( a_{j}\cdot\tau, \sqrt{a_{j}\cdot\tau} \right)
 \end{equation}
-This process provides an approximation of the output expected from the exact algorithm by maximizing the time-to-event between data points while minimizing the rate of change of any transition. As a result, the output is dense only where the rate function is sufficiently high (as it is at the beginning of an outbreak). Because it is an approximate stochastic simulation, there is an inevitable loss of resolution over a fixed-$\tau$ approach. However, this comes with a reduced computation time as the simulation does not require nearly the same amount of data points to approximate the trajectory of the simulation as an exact method would.
-The mechanism of case introduction into the model was designed as a Markov-jump process
-(referred to as $m_{t}$) to allow for a delayed introduction event.
+This process provides an approximation of the output expected from the exact
+algorithm by maximizing the time-to-event between data points while minimizing
+the rate of change of any transition. As a result, the output is dense only where
+the rate function is sufficiently high (as it is at the beginning of an outbreak).
+Because it is an approximate stochastic simulation, there is an inevitable loss
+of resolution over a fixed-$\tau$ approach.
+However, this comes with a reduced computation time as the simulation does not
+require nearly the same amount of data points to approximate the trajectory of
+the simulation as an exact method would.
+
+The mechanism of case introduction into the model was designed as a Markov-jump
+process (referred to as $m_{t}$) to allow for a delayed introduction event.
 Beyond this, the jump process also has an upper cutoff which roughly limits the
 period where measles infected individuals can enter the model. Doing so ensures
 that the simulation always runs longer than the length of the outbreak.
@@ -97,6 +126,7 @@ m(t) = \begin{cases}
        \end{cases}
 \end{equation}
 where $\epsilon =$ the rate of new measles case introduction,
-$m_{start} =$ the starting time 
+$m_{start} =$ the start time of new importation, and
+$m_{end} =$ the end time of new importation
 \clearpage
 \end{document}

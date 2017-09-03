@@ -1,18 +1,15 @@
-@Proceedings{panamericanhealthorganization(paho)_2016,
-  title   = {68th Session Of The Regional Committee Of WHO For The Americas},
-  year    = {2016},
-  author  = {Pan American Health Organization (PAHO)},
-  chapter = {Plan Of Action For Maintaining Measles, Rubella, And Congenital Rubella Syndrome Elimination In The Region Of The Americas: Final Report},
-  place   = {Washington, D.C.},
-  url     = {http://www.paho.org/hq/index.php?option=com_content&view=article&id=12276&Itemid=42078&lang=en},
-}
+@inbook{pan american health organization (paho)_2016,
+  place={Washington, D.C.},
+  title={68th Session Of The Regional Committee Of WHO For The Americas},
+  url={http://www.paho.org/hq/index.php?option=com_content&view=article&id=12276&Itemid=42078&lang=en},
+  author={Pan American Health Organization (PAHO)},
+  year={2016}}
 
 @misc{world_health_organization_table,
   author={World Health Organization ({WHO})},
   title={WHO vaccine-preventable diseases: monitoring system},
 	year = {2017},
-	url={http://apps.who.int/immunization_monitoring/globalsummary}
-}
+	url={http://apps.who.int/immunization_monitoring/globalsummary}}
 
 @article {Caudron_2014,
 	author = {Caudron, Q. and Mahmud, A. S. and Metcalf, C. J. E. and Gottfre{\dh}sson, M. and Viboud, C. and Cliff, A. D. and Grenfell, B. T.},

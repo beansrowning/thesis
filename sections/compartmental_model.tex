@@ -43,8 +43,8 @@
             ([xshift=0.5cm]I2.south)   edge node {$\Omega$}    (out3)
             (R2)   edge node {$\Omega$}                        (out4)
             % Case Introductions
-            (in3)  edge node {$\epsilon$}                      (I1)
-            (in4) edge node {$\epsilon$}          ([xshift=-0.5cm]I2);
+            (in3)  edge node {$f_{t}$}                      (I1)
+            (in4) edge node {$f_{t}$}          ([xshift=-0.5cm]I2);
   \end{tikzpicture}
   \caption{Age stratified SEIR Model with vital dyanmics}
   \label{fig:M1}
@@ -57,12 +57,13 @@
    $\alpha = $ Crude birth rate \\
    $\nu = $ Effective vaccination rate at birth \\
    $\Omega = $ Crude death rate \\
-   $\theta = $ Rate of aging from young to old compartments
+   $\theta = $ Rate of aging from young to old compartments \\
+   $f_{t} = $ New case introduction rate
 
   To explore the infection dynamics of measles, a SEIR model was selected with two
-  age compartments, subdividing younger and older populations. This was chosen for a few
-  reasons. Firstly, it allows for the modelling of heterogeneous mixing within
-  these age groups. Additionally, it allows for the model to more closely
+  age compartments, subdividing younger and older populations. This was chosen
+  for a few reasons. Firstly, it allows for the modelling of heterogeneous mixing
+  within these age groups. Additionally, it allows for the model to more closely
   align with the age strata reported in seroprevalence data, thereby reducing the
   number of assumptions which would need to be made to fit incoming data.
   Finally, the selection of two compartments over some higher dimension limits
