@@ -1,6 +1,28 @@
 \documentclass[../Paper.tex]{subfiles}
 \begin{document}
 \justifying
+There were three nations chosen for analysis using the model mentioned above:
+Sweden, Malta, and Latvia. All three have been declared measles-free by the WHO
+and see few annual cases. Despite this, the populations of these three countries
+have entirely different seroprevalence values with Latvia having the highest
+proportion of seronegative individuals and Sweden having the lowest.
+The table below highlights this variation along with nationally-reported MCV1 and MCV2 rates.
+\begin{table}[htbp]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{@{}lllllllllllllllll@{}}
+\toprule
+\multicolumn{2}{l}{\multirow{2}{*}{}} & \multicolumn{7}{c}{MCV1} &  & \multicolumn{7}{c}{MCV2} \\ \cmidrule(l){3-17}
+\multicolumn{2}{l}{} & 2016 & 2015 & 2014 & 2013 & 2012 & 2011 & 2010 &  & 2016 & 2015 & 2014 & 2013 & 2012 & 2011 & 2010 \\ \cmidrule(r){1-2}
+\multicolumn{2}{l}{Sweden} & 97\% & 98\% & 97\% & 97\% & 97\% & 96\% & 97\% &  & 95\% & 95\% & 95\% & 95\% & 95\% & 95\% & 94\% \\
+\multicolumn{2}{l}{Malta} & 93\% & 89\% & 98\% & 99\% & 93\% & 84\% & 73\% &  & 86\% & 91\% & 94\% & 88\% & 91\% & 85\% & 97\% \\
+\multicolumn{2}{l}{Latvia} & 93\% & 96\% & 95\% & 96\% & 90\% & 92\% & 95\% &  & 89\% & 92\% & 89\% & 92\% & 92\% & 92\% & 93\% \\ \bottomrule
+\end{tabular}
+\caption{MCV1 and MCV2 coverage rates as reported to the WHO \cite{http://www.who.int/immunization/monitoring_surveillance/routine/reporting/en/}}
+\end{table}
+
+
 Population demographic data for the project was acquired from the United Nations
 Department of Economic and Social Affairs, Population Division (UN DESA). Measles
 seroprevalence data was made available by findings from ESEN2 presented to the World
@@ -9,8 +31,8 @@ Health Organization.
 As previously mentioned, the model will have two age compartments in an effort to
 reduce the number of dimensions. However, the WHO report provides seroprevalence data
 in several age categories, and the appropriate proportion of measles seronegativity
-in each age group must be extrapolated. Additionally, the data in the
-seroepidemiology report were not all collected in the same year.
+in the younger age compartment must be extrapolated. It stands to mention that
+many of the data are quite dated.
 Several countries, such as Sweden, have not submitted updated data in over 20 years,
 therefore some liberty was taken in best estimating these population values.
 Where possible, sensitivity analyses of the parameters were conducted to
@@ -33,5 +55,7 @@ equation:
 The resulting seroprevalence values are then multiplied by their respective
 populations to generate the proportion susceptible and immune in the two age
 compartments.
+
+
 \clearpage
 \end{document}
